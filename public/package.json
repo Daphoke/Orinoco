@@ -1,0 +1,15 @@
+{
+  "name": "public",
+  "version": "1.0.0",
+  "description": "Orinoco",
+  "main": "index.js",
+  "scripts": {
+    "sass": "sass --watch ./styles/sass/main.scss:./styles/css/style.css --style compressed",
+    "prefix": "postcss ./styles/css/style.css --use autoprefixer -d ./styles/css/prefixed"
+  },
+  "author": "Daphoke",
+  "license": "ISC",
+  "dependencies": {
+    "sass": "^1.42.1"
+  }
+}
