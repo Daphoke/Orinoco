@@ -18,12 +18,12 @@ p span {
   font-size: 16px;
 }
 
-.footer-down {
+.footer_down {
   padding-top: 20px;
   font-size: 12px;
 }
 
-.top-nav {
+.top_nav {
   background-color: #7d2d2d;
   height: 40px;
   position: relative;
@@ -48,13 +48,13 @@ a:hover {
   color: white;
 }
 
-.top-nav i {
+.top_nav i {
   font-size: 26px;
   color: white;
   padding-right: 10px;
 }
 
-.top-nav p {
+.top_nav p {
   font-family: "Nunito", sans-serif;
   font-weight: 300;
   font-size: 18px;
@@ -90,11 +90,7 @@ nav li {
   font-weight: 900;
 }
 
-/* nav li:hover
-{
-
-} */
-.background-image {
+.background_image {
   width: 100%;
   height: 580px;
   display: block;
@@ -113,30 +109,28 @@ nav li {
 }
 
 .articles-number {
-  right: 18px;
-  top: 54px;
+  right: 14px;
+  top: 45px;
   border-radius: 20px;
-  width: 40px;
-  height: 40px;
+  width: 45px;
+  height: 45px;
   position: absolute;
   background-color: #ffffff;
   border: 3px solid crimson;
 }
 
-.bloc-title-lv1 {
-  padding-top: 80px;
-  padding-bottom: 80px;
+.block_title {
   margin: auto;
   background-color: #7d2d2d8a;
   position: relative;
   z-index: 0;
-  bottom: 490px;
+  bottom: 500px;
   color: #f3e9f1;
   font-size: 32px;
   text-shadow: 2px 8px 5px rgba(0, 0, 0, 0.5), 0px -5px 40px rgba(255, 255, 255, 0.4);
 }
 
-.bloc-title-lv1 p {
+.block_title p {
   padding-top: 20px;
   width: 50%;
   font-family: "Nunito", sans-serif;
@@ -157,29 +151,29 @@ h1 {
   height: auto;
 }
 
-.presentation-text {
+.presentation_text {
   width: 65%;
   padding-left: 10%;
 }
 
-.logo-footer {
+.logo_footer {
   margin-top: 20px;
   height: 100px;
   width: 100px;
 }
 
-.footer-main {
+.footer_main {
   padding: 30px;
   background-color: #F3E9F1;
   height: 200px;
   font-size: 15px;
 }
 
-.footer-down {
+.footer_down {
   height: 100px;
 }
 
-.footer-heading p {
+.footer_heading p {
   font-weight: bold;
 }
 
@@ -209,26 +203,4 @@ h1 {
      object-fit: cover;
 }
 
-button {
-  width: 300px;
-  height: 60px;
-  background-color: #7d2d2d;
-  color: black;
-  border-radius: 0.3rem;
-  font-family: "Nunito", sans-serif;
-  font-weight: 600;
-  font-size: 20px;
-}
-
-button:hover {
-  width: 60px;
-  height: 60px;
-  background-color: mediumseagreen;
-  border-radius: 50%;
-  transform: rotate(-180deg);
-}
-
-button i {
-  transform: rotate(180deg);
-  transition: all 0.5s;
-}/*# sourceMappingURL=main.css.map */
+/*# sourceMappingURL=main.css.map */

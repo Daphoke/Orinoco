@@ -1,233 +1,112 @@
-
-body{
+/* block_title */
+.block_title {
+  height: 100%;
+  padding-top: 150px;
+  background: radial-gradient(at 50% 250px, transparent, rgba(0, 0, 0) 600px), linear-gradient(
+    75deg,
+    rgba(209, 121, 66, 0.55) 0%, 
+    rgba(125, 45, 45, 0.55) 50%,
+    rgba(159, 69, 222, 0.55) 100%
+  );
+  position: relative;
+  z-index: 0;
+  bottom: 600px;
+  color: #ffffff;
+  font-family: "Nunito", sans-serif;
 }
 
-.m-0{
-margin: 0;
+.block_title p {
+  padding-top: 20px;
+  width: 50%;
+  font-size: 26px;
+  font-weight: 700;
 }
 
-.p-0{
-padding: 0;
+.block_title h2 {
+  font-style: italic;
 }
 
-.centpcent{
-width:100%;
-}
+/*  */
 p span {
-font-family: 'Belligerent Madness', sans-serif;   
-font-size: 16px;
-                       
+  font-family: "Belligerent Madness", sans-serif;
+  font-size: 16px;
 }
 
-.footer-down {
-padding-top: 20px;  
-font-size: 12px; 
+a {
+  text-decoration: none;
+  color: #342929;
 }
 
-.top-nav {
-background-color: #7d2d2d;
-height: 40px;
-position: relative;
-z-index:2;
-box-shadow: 0px 2px 11px 1px #a02d67fa;
-}
-
-
-nav a:hover {
-    color: white;  
-    text-shadow: 3px 3px 4px #5a223ee3,
-    -1px -1px 1px #D17942,  
-    1px -1px 1px #D17942,
-    -1px 1px 1px #D17942,
-     1px 1px 1px #D17942;
-    transition-duration: 300ms;
-    transition: ease-out;
-}
-
-a{
-    text-decoration: none;
-    color: black;
-}
-
-a:hover
-{
-    text-decoration: none;
-    color:white;
-}
-
-.top-nav i{
-    font-size: 26px;
-    color: white;
-    padding-right: 10px;  
-} 
-
-.top-nav p {
-    font-family: 'Nunito', sans-serif;
-    font-weight: 300;
-    font-size: 18px;
-    color: white;  
-    margin: 0;
+a:hover {
+  text-decoration: none;
+  color: #7d2d2d;
 }
 
 ul {
-    list-style-type: none;
-    width: 100%;
-    }
-
-.logo{
-        padding-left: 35px;
-        width: 250px;
-        height: 60px;
-    }
-
-nav {
-background-color: #F3E9F1;
-border-bottom: 2px solid white;
-height: 100px;
-position: relative;
-z-index:1;
-}
-nav li {
-    padding-right: 30px;
-    font-family: 'Gluten', cursive;
-    color:black;
-    text-shadow: 2px 2px 2px #a02d66bd,
-    -1px -1px 1px #D17942,  
-    1px -1px 1px #D17942,
-    -1px 1px 1px #D17942,
-     1px 1px 1px #D17942;
-    font-size: 28px;
-    font-weight: 900;
-}
-
-.background-image {
-width: 100%;
-height: 580px;
-display: block;
-object-fit: cover;
-}
-.panier {
-    width:60px;
-    height: 60px;
-}
-.panier:hover {
-   transform: scale(1.18);
-   transition-duration: 250ms;
-}
-.articles-number {
-    right: 17px;
-    top: 54px;
-    border-radius: 20px;
-    width: 40px;
-    height: 40px;
-    position: absolute;
-    background-color: #ffffff;
-    border: 2px solid #9F45DE;
+  list-style-type: none;
+  width: 100%;
 }
 
 h1 {
-    text-shadow: 2px 8px 5px rgba(0, 0, 0, 0.5),0px -5px 40px rgba(255,255,255,0.4);
-}
-
-.bloc-title-lv1 {
-    padding-top: 60px;
-    padding-bottom: 60px;
-margin: auto;
-background-color: #7d2d2db7;
-position: relative;
-z-index: 0;
-bottom: 525px;
-color: #ffffff;
-font-size: 30px;
-}
-
-.bloc-title-lv1 p{
-    padding-top: 20px;
-    width: 50%;
-    font-family: 'Open Sans', sans-serif;
-    font-size: 26px;
-    font-weight: 600;
-}
-
-
-#bienvenue {
-height: 600px;
+  text-shadow: 2px 8px 5px rgba(0, 0, 0, 0.5),
+    0px -5px 40px rgba(255, 255, 255, 0.4);
 }
 
 h1 {
-    font-family: 'Gluten', cursive;
-}
-#presentation {
-    padding-top: 20px;
-    height: auto;
+  font-family: "Gluten", cursive;
 }
 
-.presentation-text {
-width: 65%;
- padding-left: 10%;
+article {
+  padding-top: 20px;
 }
 
-.logo-footer{
-    margin-top: 20px;
-height: 100px;
-width: 100px;
+article p {
+  padding-bottom: 10px;
+  border-bottom: solid 4px black;
 }
 
-.footer-main {
-    padding: 30px;
-    background-color: #F3E9F1;
-    height: 200px;
-    font-size: 15px;
+/* produit */
+.teddy_card_detail_part_1 {
+  padding: 40px 30px 80px 60px;
 }
 
-.footer-down {
-  height: 100px;
-} 
-
-.footer-heading p {
-font-weight: bold;
+.teddy_card_detail_part_2 {
+  padding: 95px 60px 60px 30px;
 }
 
-.footer-heading {
-
+.card_name_xl
+{
+text-align: center;
 }
 
-.social{
-    position: relative;
-    z-index:2;
-    top: 100px;
+.card_image_xl
+{
+  padding:10px;
+  width: 100%;
+  border-radius: .3rem;
+  max-width: 1000px;
 }
 
-.ico {
-width: 100px;
-height: 100px;
-}
-#presentation figure {
-    border: solid 2px #F3E9F1;
+.teddy_card_detail_part_2 span {
+  font-weight: 700;
 }
 
-#presentation figure:hover {
-   transform: scale(1.02);
-   transition-duration: 250ms;
-   color: black;
+.teddy_card_detail_part_2 label
+{
+  font-weight: 700;
 }
 
+.div_price_xl {
+  display: flex;
+  font-weight: 600;
+  }
 
-#presentation article {
-    padding: 20px;
-}
+.table {
+vertical-align: middle;
+  }
 
-#presentation img {
-    border-radius: .3rem;
-    width: 100%;
-    object-fit: cover;
-}
+/* small */
+@media all and (max-width:767px) 
+{
 
-figcaption {
-    padding-top: 20px;
-}
-
-figcaption p {
-padding-bottom: 10px;
-border-bottom: solid 4px black;
 }

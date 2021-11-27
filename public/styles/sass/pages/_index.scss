@@ -1,0 +1,33 @@
+//bienvenue
+#bienvenue {
+  height: 600px;
+}
+
+.background_image {
+  width: 100%;
+  height: 580px;
+  display: block;
+  object-fit: cover;
+}
+
+// presentation articles
+#presentation {
+  padding-top: 20px;
+  padding-bottom: 20px;
+  height: auto;
+}
+
+.presentation_text {
+  width: 65%;
+  padding-left: 10%;
+}
+
+#presentation article {
+  padding: 20px;
+}
+
+#presentation article:hover {
+  transform: scale(1.02);
+  transition-duration: 250ms;
+  color: black;
+}

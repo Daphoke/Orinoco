@@ -1,0 +1,68 @@
+.no_client_form{
+    width: 50px;
+}
+
+#client_form
+{ 
+margin-top: -520px;
+padding-bottom: 30px;
+
+}
+
+#client_form :first-child
+{ 
+    font-weight: 600;
+}
+
+#client_form p
+{ 
+    padding-left: 30px;
+    padding-right: 30px;
+    padding-bottom: 10px;
+}
+
+tr {
+    border-width: 2px;
+}
+th {
+    border-width: 2px;
+}
+td {
+    border-width: 1px;
+}
+
+.no_recap_order{
+    padding-top: 10px;
+font-size: 28px;
+font-weight: 700;
+height: 240px;
+max-width: 90%;
+}
+
+.img-thumbnail {
+    width:100px;
+}
+
+.table-recap{
+    padding-top: 25px;
+    padding-bottom: 40px;
+}
+
+
+.div-price_cart_total-articles{
+    font-weight: 800;
+}
+
+.div-price_cart_total{
+    font-size: 18px;
+    font-weight: 800;
+}
+
+.table-dark{
+    border-color: white;
+}
+
+h3{
+    font-size: 20px;
+    margin-left: 30px;
+}
