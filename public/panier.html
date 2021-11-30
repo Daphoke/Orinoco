@@ -50,35 +50,38 @@
 		<!-- Header -->
 		<header>
 			<div class="top_nav d-flex align-items-center">
-				<div class="d-flex w-100 align-items-center">
-					<ul class="m-0 p-0 d-flex justify-content-evenly">
-						<a target="blank" href="tel:+0100000000" title="Notre numéro de téléphone" rel="noreferrer">
-							<li class="d-flex align-items-center">
+				<div class="d-flex w-100 align-items-center py-2">
+					<ul class="m-0 p-0 d-flex justify-content-evenly flex-column flex-md-row">
+						<li>
+							<a class="d-flex align-items-center" target="blank" href="tel:+0100000000"
+								title="Notre numéro de téléphone" rel="noreferrer">
 								<i class="fas fa-phone-square-alt"></i>
 								<p>01.00.00.00.00</p>
-							</li>
-						</a>
-						<a target="blank" href="mailto:contact@orinoco.fr" title="Notre addresse mail" rel="noreferrer">
-							<li class="d-flex align-items-center">
+							</a>
+						</li>
+						<li>
+							<a class="d-flex align-items-center" target="blank" href="mailto:contact@orinoco.fr"
+								title="Notre addresse mail" rel="noreferrer">
 								<i class="fas fa-envelope-square"></i>
 								<p>contact@orinoco.fr</p>
-							</li>
-						</a>
-						<a target="blank" href="https://goo.gl/maps/d1A6U1AQxUQ6BDRcA" title="Notre localisation"
-							rel="noreferrer">
-							<li class="d-flex align-items-center">
+							</a>
+						</li>
+						<li>
+							<a class="d-flex align-items-center" target="blank"
+								href="https://goo.gl/maps/d1A6U1AQxUQ6BDRcA" title="Notre localisation"
+								rel="noreferrer">
 								<i class="fas fa-map-marker-alt"></i>
 								<p>Rue des Jouets, 39150 Saint-Laurent-en-Grandvaux</p>
-							</li>
-						</a>
+							</a>
+						</li>
 					</ul>
 				</div>
 			</div>
-			<nav class="w-100 d-flex justify-content-between align-items-center">
+			<nav class="w-100 d-flex justify-content-between align-items-center flex-column flex-md-row">
 				<a href="./index.html" title="Teddy bears by Orinoco" rel="noreferrer">
 					<img class="logo" src="./images/logo/logo.png" alt="Logo d'Orinoco" />
 				</a>
-				<div class="">
+				<div>
 					<ul class="m-0 p-0 d-flex justify-content-evenly align-items-center">
 						<li>
 							<a href="./index.html" rel="noreferrer"> Accueil </a>
@@ -86,11 +89,11 @@
 						<li>
 							<a href="./index.html#presentation" rel="noreferrer"> Nos Produits </a>
 						</li>
-						<a class="d-flex align-items-center" title="Panier" href="./panier.html" rel="noreferrer">
-							<li>
+						<li class="d-flex align-items-center">
+							<a title="Panier" href="./panier.html" rel="noreferrer">
 								<img class="panier" src="./images/basket.png" alt="Votre panier" />
-							</li>
-						</a>
+							</a>
+						</li>
 					</ul>
 				</div>
 			</nav>
@@ -109,22 +112,22 @@
 						Votre commmande
 						<span>"</span>
 					</h2>
-					<div id="teddy_cart" class="container table-block mx-auto table-recap">
-						<table class="table table-striped table-dark">
+					<div id="teddy_cart" class="container table-block mx-auto table_recap">
+						<table class="table table-striped table_border_white">
 							<thead>
 								<tr>
-									<th class="first_item">Article</th>
-									<th class="item">Détails</th>
-									<th class="item">Prix unitaire</th>
-									<th class="item">Quantité</th>
-									<th class="last_item">Supprimer</th>
-									<th class="item">Total Articles</th>
+									<th class="item1">Article</th>
+									<th class="item2">Détails</th>
+									<th class="item3">Prix unitaire</th>
+									<th class="item4">Quantité</th>
+									<th class="item6">Supprimer</th>
+									<th class="item7">Total Articles</th>
 								</tr>
 							</thead>
 							<tbody id="teddy_row_order_i">
 							</tbody>
 						</table>
-						<table class="table table-striped table-dark">
+						<table class="table table-striped table_border_white">
 							<tbody>
 								<tr class="">
 									<td class="col-4 div-price_cart_total">
@@ -133,12 +136,13 @@
 									<td class="col-4 div-price_cart_total " id="total_price_container">
 									</td>
 									<td id="teddy_btn_delete_all" class="col-4">
-										<button class="btn_suprimer btn_suprimer_2 btn_suprimer_3"> <img
-												class="delete-icon" src="./icons/delete-icons.png"></button>
+										<button class="btn_suprimer btn_suprimer_2 btn_suprimer_3" title="Vider panier">
+											<img class="delete-icon" src="./icons/delete-icons.png"
+												alt="Icone poubelle">
+										</button>
 									</td>
 								</tr>
 							</tbody>
-						</table>
 						</table>
 					</div>
 				</div>
@@ -154,30 +158,30 @@
 				</p>
 				<form class="container py-3" method="POST">
 					<div class="form-group row">
-						<div class="form-group col-5">
-							<label class="col-form-label" for="contact_last_name">Nom *:</label>
+						<div class="form-group col-6">
+							<label class="col-form-label" for="contact_last_name">Nom* :</label>
 							<input class="form-control" type="text" id="contact_last_name" required="required"
 								placeholder="Jean" />
 						</div>
-						<div class="form-group col-5">
-							<label class="col-form-label" for="contact_first_name">Prenom *:</label>
+						<div class="form-group col-6">
+							<label class="col-form-label" for="contact_first_name">Prenom* :</label>
 							<input class="form-control" type="text" id="contact_first_name" required="required"
 								placeholder="Beaumont" />
 						</div>
 					</div>
 					<div>
-						<label class="col-form-label" for="contact_address">Adresse *:</label>
+						<label class="col-form-label" for="contact_address">Adresse* :</label>
 						<input class="form-control" type="text" id="contact_address" required="required"
 							placeholder="6, rue de la Liberté" />
 					</div>
-					<div class="form-group col-8">
-						<label class="col-form-label" for="contact_email">e-Mail *:</label>
+					<div class="form-group">
+						<label class="col-form-label" for="contact_email">e-Mail* :</label>
 						<input class="form-control" type="text" id="contact_email" required="required"
 							placeholder="jean.beaumont@hotmail.fr" />
 					</div>
 					<div class="form-group row">
-						<div class="form-group col-6">
-							<label class="col-form-label" for="contact_city">Ville *:</label>
+						<div class="form-group">
+							<label class="col-form-label" for="contact_city">Ville* :</label>
 							<input class="form-control" type="text" id="contact_city" required="required"
 								placeholder="Argenteuil" />
 						</div>
@@ -191,7 +195,7 @@
 			<!-- Footer -->
 			<footer>
 				<div class="footer_main d-flex align-items-center">
-					<div class="w-100 d-flex justify-content-between">
+					<div class="w-100 d-flex justify-content-between flex-column flex-md-row">
 						<div class="text-center">
 							<img class="logo_footer" src="./images/logo/logo-2.png" alt="" />
 						</div>
@@ -223,18 +227,18 @@
 						</div>
 					</div>
 				</div>
-				<div class="social d-flex justify-content-between align-items-center">
-					<a href="https://www.facebook.com" class="px-5" target="_blank" rel="noreferrer"
+				<div class="social d-flex justify-content-between align-items-center mx-auto">
+					<a href="https://www.facebook.com" class="px-4" target="_blank" rel="noreferrer"
 						title="Notre compte Facebook">
 						<img class="ico" src="./images/logo/facebook.png" alt="Icone Facebook " />
 					</a>
-					<a href="https://twitter.com" class="px-5" target="_blank" rel="noreferrer"
+					<a href="https://twitter.com" class="px-4" target="_blank" rel="noreferrer"
 						title="Notre compte Twitter">
 						<img class="ico" src="./images/logo/twitter.png" alt="Icone Twitter" />
 					</a>
 				</div>
 				<p class="footer_down text-center">
-					Copyright © 2021 <span>Orinoco</span> </br> Teddy Bears. Tout droits reservées.
+					Copyright © 2021 <span>Orinoco</span> <br> Teddy Bears. Tout droits reservées.
 				</p>
 			</footer>
 			<!-- Footer / END-->
@@ -244,9 +248,9 @@
 	<!-- Conteneur principal / END -->
 
 	<!-- Scroll to top  -->
-	<button onclick="topFunction()" id="myBtn" title="Go to top">⇑</button>
+	<button onclick="topFunction()" id="scrollBtn" title="Go to top">⇑</button>
 
-	<script type="text/javascript" src="./js/panier.js"></script>
+	<script src="./js/panier.js"></script>
 </body>
 
 </html>

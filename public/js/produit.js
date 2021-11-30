@@ -8,9 +8,7 @@ const _id = params.get("id");
 let container = document.getElementById("teddy_card_detail");
 let container_name = document.getElementById("teddy_card_detail_name");
 let container_img = document.getElementById("teddy_card_detail_img");
-let container_description = document.getElementById(
-  "teddy_card_detail_description"
-);
+let container_description = document.getElementById("teddy_card_detail_description");
 let container_price = document.getElementById("teddy_card_detail_price");
 let container_option = document.getElementById("teddy_card_detail_options");
 let container_btn = document.getElementById(
@@ -38,6 +36,7 @@ fetch("http://localhost:3000/api/teddies/" + _id)
     teddyImg.classList.add("mx-auto");
     teddyImg.classList.add("shadow");
     teddyImg.setAttribute("src", teddies.imageUrl);
+    teddyImg.setAttribute("alt","Image produit");
     container_img.appendChild(teddyImg);
 
     /// Insertion de la descripion.
@@ -97,7 +96,7 @@ fetch("http://localhost:3000/api/teddies/" + _id)
       let selectedOptionValue = selectedOption.value;
 
       // selectedQty
-      let selectedQty = document.querySelector("#teddy_card_detail_amount");
+      let selectedQty = document.querySelector(".teddy_card_detail_amount");
       // selectedQtyValue
       let selectedQtyValue = selectedQty.value;
 
@@ -131,6 +130,7 @@ fetch("http://localhost:3000/api/teddies/" + _id)
 
         ///// Déclaration de la fonction ajouter productsInLocalStorageT au sein du localStorage. /////
         const addSelectedProducts = () => {
+          console.log("avant ajout");
           console.log("selectedProduct=");
           console.log(selectedProduct);
           console.log("productInLocalStorage=");
@@ -155,7 +155,7 @@ fetch("http://localhost:3000/api/teddies/" + _id)
         ///// Déclaration de la fonction ajouter "productsInLocalStorageT" dans le localStorage. / END /////
 
         ///// Tri des produits sélectionnés et ajout au localStorage. /////
-        console.log("sort start after confirmation");
+        console.log("SORT START AFTER CONFIRMATION");
 
         /// Confirmation de selection d'un produit.
         alert(
@@ -176,7 +176,7 @@ fetch("http://localhost:3000/api/teddies/" + _id)
         ) {
           console.log("localstorage non vide");
 
-          console.log("déclaration des marqueurs d'identification de boucle")
+          console.log("déclaration des marqueurs d'identification de boucle");
           /// Déclaration des marqueurs d'identification de boucle.
           // loopMarker
           let loopMarker;
@@ -190,7 +190,7 @@ fetch("http://localhost:3000/api/teddies/" + _id)
 
           //// Boucle "for" pour caracteriser la présence d'un doublon de produits dans le localStorage, chaque objet est testé. ////
           for (a = 0; a < productInLocalStorage.length; a++) {
-            console.log("in for, boucle de test de doublon");
+            console.log("IN FOR, boucle de test de doublon");
 
             console.log(selectedProduct.idSelectedProduct);
             console.log(productInLocalStorageT[a].idSelectedProduct);
@@ -211,7 +211,7 @@ fetch("http://localhost:3000/api/teddies/" + _id)
 
             ///// Boucle de test d'égalité de "selectedProduct" et de "productInLocalStorageT[a]". Sont testées, l'id et l'option. /////
             if (!conditionsArrayA.includes(!true)) {
-              console.log("in if (présence d'un doublon)");
+              console.log("IN IF (présence d'un doublon)");
 
               /// Suppression de l'objet "a" de productInLocalStorage.
               productInLocalStorage.splice(a, 1);
@@ -229,8 +229,8 @@ fetch("http://localhost:3000/api/teddies/" + _id)
                 parseInt(selectedProduct.quantitySelectedProduct) +
                 parseInt(productInLocalStorageT[a].quantitySelectedProduct);
 
-              console.log("addition OK");
-              console.log("productInLocalStorageT=")
+              console.log("ADDITION OK");
+              console.log("productInLocalStorageT=");
               console.log(productInLocalStorageT);
 
               /// Sauvegarde de "productInLocalStorageT" dans le localstorage sous le nom de "productsInLocalStorageT".
@@ -249,13 +249,13 @@ fetch("http://localhost:3000/api/teddies/" + _id)
 
           ///// Contrôle de "productInLocalStorageT.length". Si les valeurs sonts différentes, on est entré dans la boucle "for" pour caracteriser la présence d'un doublon mais aucun n'a été trouvé.
           if (loopMarker !== loopMarker2) {
-            console.log("in if (loopMarker !=loopMarker2)");
+            console.log("IN IF, pas de doublon (loopMarker != loopMarker2)");
             console.log("fonction addSelectedProducts");
 
             addSelectedProducts();
           }
         } else {
-          console.log("fonction addSelectedProducts");
+          console.log("FONCTION addSelectedProducts");
 
           productInLocalStorageT = [];
 
@@ -264,7 +264,7 @@ fetch("http://localhost:3000/api/teddies/" + _id)
         ///// Tri des produits sélectionnés et ajout au localStorage. / END /////
       }
       ///// Boucle produit selectionné / non selectionné / END /////
-      console.log("out")
+      console.log("OUT");
     });
     ///// Ecoute de l'évènement click on "#teddy_card_detail-btn-add-to-cart" / END /////
   })

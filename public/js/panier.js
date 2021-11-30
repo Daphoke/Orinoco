@@ -1,12 +1,17 @@
-////////// scroll to top //////////
-//Get the button:
-mybutton = document.getElementById("myBtn");
+///// scroll to top /////
+// Get the button:
+mybutton = document.getElementById("scrollBtn");
 
 // When the user scrolls down 20px from the top of the document, show the button
-window.onscroll = function() {scrollFunction()};
+window.onscroll = function () {
+  scrollFunction();
+};
 
 function scrollFunction() {
-  if (document.body.scrollTop > 650 || document.documentElement.scrollTop > 650) {
+  if (
+    document.body.scrollTop > 650 ||
+    document.documentElement.scrollTop > 650
+  ) {
     mybutton.style.display = "block";
   } else {
     mybutton.style.display = "none";
@@ -18,7 +23,7 @@ function topFunction() {
   document.body.scrollTop = 0; // For Safari
   document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
 }
-////////// Scroll to top //////////
+///// Scroll to top /////
 
 /// Déclaration de la variable "productInLocalStorage" contenant les "keys" et "values" du localStorage.
 // productsInLocalStorage
@@ -27,7 +32,7 @@ let productInLocalStorage = JSON.parse(
 );
 
 /// Sauvegarde dans le localStorage de productsInLocalStorageT, l'image de productInLocalStorage.
-//productsInLocalStorageT
+// productsInLocalStorageT
 localStorage.setItem(
   "productsInLocalStorageT",
   JSON.stringify(productInLocalStorage)
@@ -59,7 +64,7 @@ let totalPrice = 0;
 // teddiesOrderQuantity
 let teddiesOrderQuantity = 0;
 
-///// Si productInLocalStorage n'est pas un tableau vide.
+/// Vérification de la nature du localStorage
 if (
   typeof productInLocalStorage != "undefined" &&
   productInLocalStorage != null &&
@@ -68,11 +73,10 @@ if (
   localStorage.getItem("productsInLocalStorageT") !== null
 ) {
   /// Déclaration de la variable "ligneComande" pour la boucle de création d'une nouvelle ligne de commande d'article.
-  //ligneCommande
+  // ligneCommande
   let ligneComande = [];
 
   ////////// Boucle d'incrémentation (totalPriceArticles, totalPrice, teddiesOrderQuantity, ligneCommande, products). //////////
-
   for (j = 0; j < productInLocalStorage.length; j++) {
     /// Calcul du total pour chaque ligne de commande d'article.
     // totalPriceArticles
@@ -107,7 +111,7 @@ if (
       `<tr>
             <td>
                 <a href="produit.html?id=${productInLocalStorage[j].idSelectedProduct}">
-                    <img class="img-thumbnail" src="${productInLocalStorage[j].imgSelectedProduct}">
+                    <img class="img-thumbnail" src="${productInLocalStorage[j].imgSelectedProduct}" alt="Vignette produit">
                 </a>
             </td>
             <td>
@@ -125,15 +129,15 @@ if (
             </td>
             <td>
                 <div>
-                    <input id="teddy_card_detail_amount" class="form-control text-end my-2 pe-1" min="1" max="100" type="number" value="${productInLocalStorage[j].quantitySelectedProduct}">
+                  <input id="teddy_card_detail_Quantity" class="teddy_card_detail_amount form-control text-end my-2 pe-1" min="1" max="100" type="number" value="${productInLocalStorage[j].quantitySelectedProduct}" >
                 </div>
             </td>
             <td class="teddy_btn_delete_article">
-                <button class="btn_suprimer btn_suprimer_2">
-                    <img class="delete-icon" src="./icons/delete-icons.png">
+                <button class="btn_suprimer btn_suprimer_2" title="Suprimer article">
+                    <img class="delete-icon" src="./icons/delete-icons.png" alt="Icone poubelle">
                 </button>
             </td>
-            <td class="" data-title="Prix Total Article">
+            <td>
                 <div id="teddy_cart_price_total_article" class="div-price_cart_total-articles">
                     ${totalPriceArticles},00 €
                 </div>
@@ -150,6 +154,7 @@ if (
   ////////// Boucle d'incrémentation (totalPriceArticles, totalPrice, teddiesOrderQuantity, products, ligneCommande). / END //////////
 
   ///// Tableau Total /////
+
   /// Création de l'élément "total_price_container" affichant le prix total.
   let elementTotalPrice = document.createElement("div");
   elementTotalPrice.classList.add("d-flex");
@@ -171,21 +176,49 @@ if (
   localStorage.setItem("totalPrice", JSON.stringify(totalPrice));
   ///// Tableau Total / END /////
 
+  ///// Option de modification des quantités de produits du panier /////
+
+  /// Récupération des différent inputs ".teddy_card_detail_amount"
+  // quantityInput
+  let quantityInput = document.getElementsByClassName(
+    "teddy_card_detail_amount"
+  );
+
+  /// Boucle "for" de selection de l'input "quantityInput[m]".
+  for (let m = 0; m < quantityInput.length; m++) {
+    /// Ecoute d'un changement de valeur de "quantityInput[m]"
+    quantityInput[m].addEventListener("change", function (event) {
+      /// Bloque l'action par défaut du navigateur pour l'événement en cours.
+      event.preventDefault();
+
+      /// Récupération de la nouvelle valeur de l'input "quantityInput[m]".
+      productInLocalStorage[m].quantitySelectedProduct = quantityInput[m].value;
+
+      /// Sauvegarde du nouveau localStorage "productsInLocalStorageT".
+      localStorage.setItem(
+        "productsInLocalStorageT",
+        JSON.stringify(productInLocalStorage)
+      );
+
+      /// Actualisation de la page.
+      location.reload();
+    });
+  }
+  ///// Option de modification des quantités de produits du panier / END /////
+
   ///// Option "delete article" /////
+
   /// Récupération du bon bouton "delete article".
   // btnDeleteArticle
   let btnDeleteArticle = document.getElementsByClassName(
     "teddy_btn_delete_article"
   );
 
-  ///// Boucle "for" de selection du bouton "btnDeleteArticle". /////
+  ///// Boucle "for" de selection du bouton "btnDeleteArticle[l]". /////
   for (let l = 0; l < btnDeleteArticle.length; l++) {
     btnDeleteArticle[l].addEventListener("click", function (event) {
       /// Bloque l'action par défaut du navigateur pour l'événement en cours.
       event.preventDefault();
-
-      console.log(productInLocalStorage);
-      console.log(productInLocalStorage.length);
 
       /// Confirmation de suppression.
       if (
@@ -237,7 +270,8 @@ if (
   });
   //// Au clic sur le bouton "teddy_btn_delete_all" / END ////
   ///// Option "vider le panier" / END /////
-/////////////// Si il y a un produit dans le panier : afficher les produits présent dans productsInLocalStorage. ///////////////
+
+  /////////////// Si il y a un produit dans le panier : afficher les produits présent dans productsInLocalStorage. / END///////////////
 
   /////////////// Si le panier est vide :  ///////////////
 } else {
@@ -258,10 +292,10 @@ if (
 /////////////// Si le panier est vide :  / END ///////////////
 
 /////////////// Fomulaire de commande ///////////////
-///Création de la constante "orderConfirm" qui pointe le boutton "order_confirm".
+/// Création de la constante "orderConfirm" qui pointe le boutton "order_confirm".
 const orderConfirm = document.getElementById("order_confirm");
 
-///Constantes utile pour la validation des données utilisateurs recueillis dans le formulaire de commande.
+/// Constantes utile pour la validation des données utilisateurs recueillis dans le formulaire de commande.
 const lastNameEntry = /^[a-zA-Zà-ö\s.'-]+$/;
 const firstNameEntry = /^[a-zA-Zà-ö.-]+$/;
 const eMailEntry = /^[a-zA-Z0-9.!@#$%&’*+=?^_`{|}~-]+$/;
@@ -272,7 +306,7 @@ const cityEntry = /^[a-zA-Zà-ö\s.'-]+$/;
 orderConfirm.addEventListener("click", (event) => {
   event.preventDefault();
 
-  ///Récupération par pointage des données du formulaire de commande.
+  /// Récupération par pointage des données du formulaire de commande.
   let contact = {
     firstName: document.getElementById("contact_first_name").value,
     lastName: document.getElementById("contact_last_name").value,
@@ -318,7 +352,7 @@ orderConfirm.addEventListener("click", (event) => {
     products,
   });
 
-  //// Interrogation de l’API pour l'enregistrement de "order" et la création de la réponse "response.orderId". ////
+  ///// Interrogation de l’API pour l'enregistrement de "order" et la création de la réponse "response.orderId". /////
   fetch("http://localhost:3000/api/teddies/order", {
     method: "POST",
     headers: {
@@ -336,7 +370,7 @@ orderConfirm.addEventListener("click", (event) => {
       localStorage.setItem("contact", JSON.stringify(contactT));
       window.location.assign("confirmation.html?orderId=" + idCommande);
     })
-    //// Interrogation de l’API pour l'enregistrement de "order" et la création de la réponse "response.orderId". / END ////
+    ///// Interrogation de l’API pour l'enregistrement de "order" et la création de la réponse "response.orderId". / END /////
     .catch(function (error) {
       alert(error);
     });

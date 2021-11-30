@@ -1,0 +1,47 @@
+/* produit */
+.teddy_card_detail_part_1 {
+  padding: 40px 30px 80px 60px;
+}
+
+.teddy_card_detail_part_2 {
+  padding: 95px 60px 60px 30px;
+}
+
+.card_name_xl {
+  text-align: center;
+}
+
+.card_image_xl {
+  padding: 10px;
+  width: 100%;
+  border-radius: 0.3rem;
+  max-width: 1000px;
+}
+
+.teddy_card_detail_part_2 span {
+  font-weight: 700;
+}
+
+.teddy_card_detail_part_2 label {
+  font-weight: 700;
+}
+
+.div_price_xl {
+  display: flex;
+  font-weight: 600;
+}
+
+/* small */
+@media all and (max-width: 1024px) {
+  #teddy_card_detail {
+    flex-direction: column;
+  }
+
+  .teddy_card_detail_part_1 {
+    padding: 40px 10% 0px 10%;
+  }
+
+  .teddy_card_detail_part_2 {
+    padding: 50px 10% 60px 10%;
+  }
+}

@@ -2,12 +2,13 @@
 .block_title {
   height: 100%;
   padding-top: 150px;
-  background: radial-gradient(at 50% 250px, transparent, rgba(0, 0, 0) 600px), linear-gradient(
-    75deg,
-    rgba(209, 121, 66, 0.55) 0%, 
-    rgba(125, 45, 45, 0.55) 50%,
-    rgba(159, 69, 222, 0.55) 100%
-  );
+  background: radial-gradient(at 50% 250px, transparent, rgba(0, 0, 0) 650px),
+    linear-gradient(
+      75deg,
+      rgba(209, 121, 66, 0.55) 0%,
+      rgba(125, 45, 45, 0.55) 50%,
+      rgba(159, 69, 222, 0.55) 100%
+    );
   position: relative;
   z-index: 0;
   bottom: 600px;
@@ -26,12 +27,7 @@
   font-style: italic;
 }
 
-/*  */
-p span {
-  font-family: "Belligerent Madness", sans-serif;
-  font-size: 16px;
-}
-
+/* Genéral*/
 a {
   text-decoration: none;
   color: #342929;
@@ -50,63 +46,50 @@ ul {
 h1 {
   text-shadow: 2px 8px 5px rgba(0, 0, 0, 0.5),
     0px -5px 40px rgba(255, 255, 255, 0.4);
-}
-
-h1 {
   font-family: "Gluten", cursive;
 }
 
-article {
-  padding-top: 20px;
-}
-
-article p {
-  padding-bottom: 10px;
-  border-bottom: solid 4px black;
-}
-
-/* produit */
-.teddy_card_detail_part_1 {
-  padding: 40px 30px 80px 60px;
-}
-
-.teddy_card_detail_part_2 {
-  padding: 95px 60px 60px 30px;
-}
-
-.card_name_xl
-{
-text-align: center;
-}
-
-.card_image_xl
-{
-  padding:10px;
-  width: 100%;
-  border-radius: .3rem;
-  max-width: 1000px;
-}
-
-.teddy_card_detail_part_2 span {
-  font-weight: 700;
-}
-
-.teddy_card_detail_part_2 label
-{
-  font-weight: 700;
-}
-
-.div_price_xl {
-  display: flex;
-  font-weight: 600;
+/* Tablet-Laptop */
+@media all and (min-width: 767px) and (max-width: 1024px) {
+  .block_title {
+    background: radial-gradient(at 50% 250px, transparent, rgba(0, 0, 0) 500px),
+      linear-gradient(
+        75deg,
+        rgba(209, 121, 66, 0.55) 0%,
+        rgba(125, 45, 45, 0.55) 50%,
+        rgba(159, 69, 222, 0.55) 100%
+      );
   }
-
-.table {
-vertical-align: middle;
-  }
+}
 
 /* small */
-@media all and (max-width:767px) 
-{
+@media all and (max-width: 767px) {
+  .block_title {
+    background: radial-gradient(at 50% 250px, transparent, rgba(0, 0, 0) 250px),
+      linear-gradient(
+        75deg,
+        rgba(209, 121, 66, 0.55) 0%,
+        rgba(125, 45, 45, 0.55) 50%,
+        rgba(159, 69, 222, 0.55) 100%
+      );
+      padding-top: 100px;
+  }
 
+  .block_title p {
+    padding-top: 20px;
+    width: 70%;
+    font-size: 22px;
+    font-weight: 600;
+  }
+
+  .block_title h2 {
+    margin: auto;
+    font-style: italic;
+    width: 90%;
+    font-weight: 700;
+  }
+
+  .table {
+    font-size: 12px;
+  }
 }

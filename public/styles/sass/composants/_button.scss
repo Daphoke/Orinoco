@@ -1,9 +1,8 @@
-
-.btn_suprimer{
+.btn_suprimer {
   width: 310px;
   height: 60px;
   background-color: rgb(239, 239, 239);
-  color:black;
+  color: black;
   border-width: 5px;
   border-radius: 1rem;
   font-family: "Nunito", sans-serif;
@@ -17,12 +16,12 @@
 
 .btn_suprimer:after {
   font-weight: 800;
-  content: '>';
+  content: ">";
   position: absolute;
-  opacity: 0;  
+  opacity: 0;
   right: -10px;
   transition: 0.1s;
-  transition-timing-function:ease-out;
+  transition-timing-function: ease-out;
 }
 
 .btn_suprimer:hover:after {
@@ -31,13 +30,28 @@
 }
 
 .btn_suprimer_2 {
-width: 80px !important;
+  width: 80px !important;
 }
 
 .btn_suprimer_3 {
   background-color: #a02d67fa !important;
-  }
+}
 
 .delete-icon {
   height: 100%;
+}
+
+/* small */
+@media all and (max-width: 768px) {
+  .btn_suprimer_2 {
+    width: 50px !important;
+  }
+
+  .delete-icon {
+    height: 60%;
+  }
+
+  .btn_suprimer:after {
+    all:initial
+  }
 }

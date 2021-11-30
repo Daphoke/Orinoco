@@ -22,12 +22,40 @@
   padding-left: 10%;
 }
 
+article {
+  padding-top: 20px;
+}
+
 #presentation article {
   padding: 20px;
+}
+
+#presentation article p {
+  padding-bottom: 10px;
+  border-bottom: solid 4px black;
 }
 
 #presentation article:hover {
   transform: scale(1.02);
   transition-duration: 250ms;
   color: black;
+}
+
+/* Tablet-Laptop */
+@media all and (min-width: 767px) and (max-width: 1024px) {
+}
+
+/* small */
+@media all and (max-width:767px) 
+{
+
+.presentation_text  {
+  width: 90%;
+  padding-left: 10%;
+}
+
+#presentation li  {
+  padding-left : 0;
+  padding-right : 0;
+  }
 }

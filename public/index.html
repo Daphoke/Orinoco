@@ -50,26 +50,26 @@
     <!-- Header -->
     <header>
       <div class="top_nav d-flex align-items-center">
-        <div class="d-flex w-100 align-items-center">
+        <div class="d-flex w-100 align-items-center py-2">
           <ul class="m-0 p-0 d-flex justify-content-evenly flex-column flex-md-row">
-            <a target="blank" href="tel:+0100000000" title="Notre numéro de téléphone" rel="noreferrer">
-              <li class="d-flex align-items-center">
-                <i class="fas fa-phone-square-alt"></i>
-                <p>01.00.00.00.00</p>
-              </li>
-            </a>
-            <a target="blank" href="mailto:contact@orinoco.fr" title="Notre addresse mail" rel="noreferrer">
-              <li class="d-flex align-items-center">
+            <li>
+             <a class="d-flex align-items-center" target="blank" href="tel:+0100000000" title="Notre numéro de téléphone" rel="noreferrer">
+               <i class="fas fa-phone-square-alt"></i>
+                 <p>01.00.00.00.00</p>
+               </a>
+            </li>
+            <li>
+              <a class="d-flex align-items-center" target="blank" href="mailto:contact@orinoco.fr" title="Notre addresse mail" rel="noreferrer">
                 <i class="fas fa-envelope-square"></i>
                 <p>contact@orinoco.fr</p>
-              </li>
-            </a>
-            <a target="blank" href="https://goo.gl/maps/d1A6U1AQxUQ6BDRcA" title="Notre localisation" rel="noreferrer">
-              <li class="d-flex align-items-center">
+               </a>
+            </li>
+             <li>
+              <a class="d-flex align-items-center" target="blank" href="https://goo.gl/maps/d1A6U1AQxUQ6BDRcA" title="Notre localisation" rel="noreferrer">
                 <i class="fas fa-map-marker-alt"></i>
                 <p>Rue des Jouets, 39150 Saint-Laurent-en-Grandvaux</p>
-              </li>
-            </a>
+              </a>
+             </li>
           </ul>
         </div>
       </div>
@@ -77,7 +77,7 @@
         <a href="./index.html" title="Teddy bears by Orinoco" rel="noreferrer">
           <img class="logo" src="./images/logo/logo.png" alt="Logo d'Orinoco" />
         </a>
-        <div class="">
+        <div>
           <ul class="m-0 p-0 d-flex justify-content-evenly align-items-center">
             <li>
               <a href="./index.html" rel="noreferrer"> Accueil </a>
@@ -85,11 +85,11 @@
             <li>
               <a href="#presentation" rel="noreferrer"> Nos Produits </a>
             </li>
-            <a class="d-flex align-items-center" title="Panier" href="./panier.html" rel="noreferrer">
-              <li>
+            <li class="d-flex align-items-center">
+              <a  title="Panier" href="./panier.html" rel="noreferrer">
                 <img class="panier" src="./images/basket.png" alt="Votre panier" />
-              </li>
-            </a>
+              </a>
+            </li>
           </ul>
         </div>
       </nav>
@@ -171,17 +171,17 @@
             </div>
           </div>
         </div>
-        <div class="social d-flex justify-content-between align-items-center">
-          <a href="https://www.facebook.com" class="px-5" target="_blank" rel="noreferrer"
+        <div class="social d-flex justify-content-between align-items-center mx-auto">
+          <a href="https://www.facebook.com" class="px-4" target="_blank" rel="noreferrer"
             title="Notre compte Facebook">
             <img class="ico" src="./images/logo/facebook.png" alt="Icone Facebook " />
           </a>
-          <a href="https://twitter.com" class="px-5" target="_blank" rel="noreferrer" title="Notre compte Twitter">
+          <a href="https://twitter.com" class="px-4" target="_blank" rel="noreferrer" title="Notre compte Twitter">
             <img class="ico" src="./images/logo/twitter.png" alt="Icone Twitter" />
           </a>
         </div>
         <p class="footer_down text-center">
-          Copyright © 2021 <span>Orinoco</span> </br> Teddy Bears. Tout droits reservées.
+          Copyright © 2021 <span>Orinoco</span> <br> Teddy Bears. Tout droits reservées.
         </p>
       </footer>
       <!-- Footer / END-->
@@ -191,9 +191,9 @@
   <!-- Conteneur principal / END -->
 
   <!-- Scroll to top  -->
-  <button onclick="topFunction()" id="myBtn" title="Go to top">⇑</button>
+  <button onclick="topFunction()" id="scrollBtn" title="Go to top">⇑</button>
 
-  <script type="text/javascript" src="./js/index.js"></script>
+  <script src="./js/index.js"></script>
 </body>
 
 </html>
