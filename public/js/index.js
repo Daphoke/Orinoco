@@ -28,11 +28,11 @@ function topFunction() {
 /// Initialisation container (<ul id ="articles_list">).
 let container = document.getElementById("articles_list");
 
-////////// Interrogation de l'Application Programming Interface pour récupérer l'image, le nom, et le prix de tous des produits. //////////
+////////// Interrogation de l'Application Programming Interface pour récupérer le détail de tous des produits. //////////
 fetch("http://localhost:3000/api/teddies")
   .then((response) => response.json())
   .then((teddies) => {
-    ///// Boucle d'incrémentation de "teddies.length" pour la création des cartes produits. /////
+    ///// Boucle for d'incrémentation de "teddies.length" pour la création des cartes produits. /////
     for (let i = 0; i < teddies.length; i++) {
       /// Création des éléments de la liste "articles_list" pour l'affichage des cartes produits.
       let listElement = document.createElement("li");
@@ -91,8 +91,8 @@ fetch("http://localhost:3000/api/teddies")
     }
     ///// Boucle d'incrémentation de "teddies.length" pour la création des cartes produits. / END /////
   })
-  ////////// Interrogation de l'Application Programming Interface pour récupérer l'image, le nom, et le prix de tous des produits. / END //////////
 
   .catch(function () {
     alert("Produits indisponibles");
   });
+  ////////// Interrogation de l'Application Programming Interface pour récupérer l'image, le nom, et le prix de tous des produits. / END //////////

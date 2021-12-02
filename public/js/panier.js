@@ -256,7 +256,7 @@ if (
       /// Bloque l'action par défaut du navigateur pour l'événement en cours.
       event.preventDefault();
 
-      /// "productInLocalStorage" est alors un tablaeu vide ce qui est équivalent à sa suppression dans le localStorage.
+      /// "productInLocalStorage" est alors un tableau vide ce qui est équivalent à sa suppression dans le localStorage.
       productInLocalStorage = [];
 
       /// Sauvegarde de "productInLocalStorage" dans le localStorage sous le nom de productsInLocalStorageT
@@ -345,6 +345,7 @@ orderConfirm.addEventListener("click", (event) => {
       'Veuillez renseigner correctement le champs "Ville" pour valider votre commande.'
     );
   }
+/////////////// Fomulaire de commande / END ///////////////
 
   /// Récupération de "order".
   let order = JSON.stringify({
@@ -370,8 +371,9 @@ orderConfirm.addEventListener("click", (event) => {
       localStorage.setItem("contact", JSON.stringify(contactT));
       window.location.assign("confirmation.html?orderId=" + idCommande);
     })
-    ///// Interrogation de l’API pour l'enregistrement de "order" et la création de la réponse "response.orderId". / END /////
+
     .catch(function (error) {
       alert(error);
     });
 });
+///// Interrogation de l’API pour l'enregistrement de "order" et la création de la réponse "response.orderId". / END /////

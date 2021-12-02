@@ -1,7 +1,7 @@
 ////////// Initialisation //////////
 /// Récuperation de l’id produit dans l'url via l'utilisation d'un construtor.
 let params = new URL(document.location).searchParams;
-const _id = params.get("id");
+let _id = params.get("id");
 
 /// Initialisation des containers.
 // containers
@@ -22,7 +22,7 @@ fetch("http://localhost:3000/api/teddies/" + _id)
   /// Réponse serveur
   .then((response) => response.json())
   .then((teddies) => {
-    ///// Création du contenu mis à jour de façon dynamique /////
+    ///// Création du détail produit mis à jour de façon dynamique /////
     /// Insertion du nom.
     let teddyName = document.createElement("h1");
     teddyName.classList.add("card_name_xl");
@@ -79,13 +79,15 @@ fetch("http://localhost:3000/api/teddies/" + _id)
     container_btn.appendChild(btnAddToCart);
     btnAddToCart.classList.add("btn_suprimer");
     btnAddToCart.textContent = "Ajouter à votre panier";
-    ///// Création du contenu mis à jour de façon dynamique / END /////
+    ///// Création du détail produit mis à jour de façon dynamique / END /////
 
     /////// Ecoute de l'évènement click on "#teddy_card_detail-btn-add-to-cart". ///////
     btnAddToCart.addEventListener("click", function (event) {
       /// Bloque l'action par défaut du navigateur pour l'événement en cours.
       event.preventDefault();
-
+      
+      console.log("START")
+      
       /// Récupération des donneés pour la constitution du panier.
       // selectedOption
       let selectedOption = document.querySelector("#teddy_card_detail_options");
