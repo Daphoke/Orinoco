@@ -270,9 +270,10 @@ fetch("http://localhost:3000/api/teddies/" + _id)
     });
     ///// Ecoute de l'évènement click on "#teddy_card_detail-btn-add-to-cart" / END /////
   })
-  ////////// Interrogation de l’API pour récupérer les détails du produit "_id" / END  //////////
+
 
   .catch(function () {
     alert("Produits indisponibles");
   });
+////////// Interrogation de l’API pour récupérer les détails du produit "_id" / END  //////////
 /////////////// END ///////////////
