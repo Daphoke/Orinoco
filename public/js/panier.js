@@ -379,7 +379,6 @@ orderConfirm.addEventListener("click", (event) => {
     headers: {
       "content-type": "application/json",
     },
-    mode: "cors",
     body: order,
   })
     /// Réponse du serveur.
