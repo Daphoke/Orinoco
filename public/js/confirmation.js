@@ -22,4 +22,3 @@ confirmationPriceId.textContent = totalPrice + ",00 €";
 
 /// Efface le localStorage
 localStorage.clear();
-

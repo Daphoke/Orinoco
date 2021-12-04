@@ -31,12 +31,12 @@ let productInLocalStorage = JSON.parse(
   localStorage.getItem("productsInLocalStorageT")
 );
 
-/// Sauvegarde dans le localStorage de productsInLocalStorageT, l'image de productInLocalStorage.
-// productsInLocalStorageT
-localStorage.setItem(
-  "productsInLocalStorageT",
-  JSON.stringify(productInLocalStorage)
-);
+// /// Sauvegarde dans le localStorage de productsInLocalStorageT, l'image de productInLocalStorage.
+// // productsInLocalStorageT
+// localStorage.setItem(
+//   "productsInLocalStorageT",
+//   JSON.stringify(productInLocalStorage)
+// );
 
 /// Initialisation des containers.
 // containers
@@ -270,7 +270,6 @@ if (
   });
   //// Au clic sur le bouton "teddy_btn_delete_all" / END ////
   ///// Option "vider le panier" / END /////
-
   /////////////// Si il y a un produit dans le panier : afficher les produits présent dans productsInLocalStorage. / END///////////////
 
   /////////////// Si le panier est vide :  ///////////////
@@ -315,35 +314,56 @@ orderConfirm.addEventListener("click", (event) => {
     email: document.getElementById("contact_email").value,
   };
 
+  /// Test du panier avant le test du formulaire.
+  if (totalPrice==0) {
+
+    alert(
+      "Votre commande nest pas validé, il n'y a aucun produit dans votre panier."
+    );
+  
+    /// Rechargement de la page.
+    location.reload();
+  }
+
   /// Test du remplissage du formulaire.
-  if (lastNameEntry.test(contact.lastName) == false) {
+  if (lastNameEntry.test(contact.lastName) == false ) {
     alert(
       'Veuillez renseigner correctement le champs "Nom" pour valider votre commande.'
     );
+    /// Rechargement de la page.
+    location.reload();
   }
 
   if (firstNameEntry.test(contact.firstName) == false) {
     alert(
       'Veuillez renseigner correctement le champs "Prénom" pour valider votre commande.'
     );
+    /// Rechargement de la page.
+    location.reload();
   }
 
   if (eMailEntry.test(contact.email) == false) {
     alert(
       'Veuillez renseigner correctement le champs "e-Mail" pour valider votre commande.'
     );
+    /// Rechargement de la page.
+    location.reload();
   }
 
   if (addressEntry.test(contact.address) == false) {
     alert(
       'Veuillez renseigner correctement le champs "Adresse" pour valider votre commande.'
     );
+    /// Rechargement de la page.
+    location.reload();
   }
 
   if (cityEntry.test(contact.city) == false) {
     alert(
       'Veuillez renseigner correctement le champs "Ville" pour valider votre commande.'
     );
+    /// Rechargement de la page.
+    location.reload();
   }
 /////////////// Fomulaire de commande / END ///////////////
 
@@ -372,8 +392,8 @@ orderConfirm.addEventListener("click", (event) => {
       window.location.assign("confirmation.html?orderId=" + idCommande);
     })
 
-    .catch(function (error) {
-      alert(error);
+    .catch(function () {
+      alert("Commande imposible.");
     });
 });
 ///// Interrogation de l’API pour l'enregistrement de "order" et la création de la réponse "response.orderId". / END /////
